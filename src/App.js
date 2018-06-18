@@ -5,14 +5,15 @@ import "./App.css";
 import NavBar from './nav/NavBar';
 import Register from "./login/Register";
 import Login from './login/Login';
-import PopLog from './login/LoginPopup'
+import PopLog from './login/LoginPopup';
+import HomePage from './home/HomePage'
 
 class App extends Component {
   // Set initial state
   state = {
     currentView: "login",
     searchTerms: "",
-    activeUser: localStorage.getItem("bandId"),
+    activeUser: sessionStorage.getItem("bandId"),
     newEmail: "",
     newPassword: ""
   };
@@ -23,7 +24,7 @@ class App extends Component {
     state = {
         currentView: "login",
         searchTerms: "",
-        activeUser: localStorage.getItem("bandId"),
+        activeUser: sessionStorage.getItem("bandId"),
         viewingUser: ""
     }
 
@@ -46,12 +47,12 @@ class App extends Component {
   // Function to update local storage and set activeUser state
   setActiveUser = val => {
     if (val) {
-      localStorage.setItem("bandId", val);
+      sessionStorage.setItem("bandId", val);
       this.setState({
         activeUser: val
       })
     } else {
-      localStorage.removeItem("bandId");
+      sessionStorage.removeItem("bandId");
       this.setState({
         activeUser: null
       })
@@ -103,7 +104,7 @@ class App extends Component {
       return (
         <Register showView={this.showView} setActiveUser={this.setActiveUser} setUsernamePassword={this.setUsernamePassword}/>
       );
-    } else if (localStorage.getItem("bandId") === null) {
+    } else if (sessionStorage.getItem("bandId") === null) {
       return (
         <Login showView={this.showView} setActiveUser={this.setActiveUser} newEmail={this.state.newEmail} newPassword={this.state.newPassword}/>
       );
@@ -112,12 +113,10 @@ class App extends Component {
         case "logout":
           return (
             <PopLog />
-            // <Login
-            //   showView={this.showView}
-            //   setActiveUser={this.setActiveUser}
-            //   newEmail={this.newEmail} 
-            //   newPassword={this.newPassword}
-            // />
+          )
+            case "HomePage":
+            return (
+              <HomePage id={sessionStorage.getItem("bandId")}/>
           );
       }
     }
