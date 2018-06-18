@@ -1,10 +1,10 @@
-body {
+/* body {
   height:100%;
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
   background: linear-gradient(midnightblue, cornflowerblue, midnightblue)no-repeat;
-}
+} */
 /* div {
   position: sticky;
   margin: 0px;
@@ -12,6 +12,6 @@ body {
   font-family: sans-serif;
   background: linear-gradient(cornflowerblue, steelblue)no-repeat;
 } */
-html {
+/* html {
   height:100%;
-}
+} */
