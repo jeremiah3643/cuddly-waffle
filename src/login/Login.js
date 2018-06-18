@@ -75,9 +75,9 @@ export default class Login extends Component {
     */
   render() {
     return (
-      <div className="formDiv">
-        <form className="form-signin" onSubmit={this.handleLogin}>
-          <h1 className="signIn">Please sign in</h1>
+      <div className="container is-fluid">
+        <form className="container" onSubmit={this.handleLogin}>
+          <h1 className="notification">Please sign in</h1>
           <label htmlFor="inputEmail" className="sr-only">
             User Name
           </label>
@@ -106,13 +106,13 @@ export default class Login extends Component {
           <div className="checkbox mb-3">
             <input type="checkbox" value="remember-me" /> Remember me
           </div>
-          <button className="btn btn-lg btn-primary btn-block" type="submit">
+          <button className="button is-primary is-outlined" type="submit">
             Sign in
           </button>
 
           <button
             id="login__register"
-            className="btn btn-lg btn-info btn-block"
+            className="button is-primary is-outlined"
             onClick={this.registerButtonClick}
           >
             Register
