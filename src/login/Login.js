@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import App from "../App";
-// import "./login.css";
+import './LoginStyle.css'
 
 export default class Login extends Component {
   constructor(props) {
@@ -77,7 +77,7 @@ export default class Login extends Component {
     return (
       <div className="formDiv">
         <form className="form-signin" onSubmit={this.handleLogin}>
-          <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <h1 className="signIn">Please sign in</h1>
           <label htmlFor="inputEmail" className="sr-only">
             User Name
           </label>

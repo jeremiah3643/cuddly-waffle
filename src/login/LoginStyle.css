@@ -1,0 +1,13 @@
+.formDiv{
+    float: center;
+    text-align: center;
+    background: radial-gradient(steelblue, slategrey);
+    text-shadow: white;
+}
+.form-control{
+    text-align: center;
+    background-color: whitesmoke;
+}
+.signIn{
+    text-align: center;
+}

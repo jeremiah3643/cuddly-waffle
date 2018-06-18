@@ -1,5 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
   font-family: sans-serif;
+  background: linear-gradient(midnightblue, cornflowerblue, midnightblue)no-repeat;
+}
+/* div {
+  position: sticky;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  background: linear-gradient(cornflowerblue, steelblue)no-repeat;
+} */
+html {
+  height:100%;
 }
