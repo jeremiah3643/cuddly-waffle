@@ -1,10 +1,11 @@
 
-
+import './login/LoginStyle.css'
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from './nav/NavBar';
 import Register from "./login/Register";
 import Login from './login/Login';
+import PopLog from './login/LoginPopup'
 
 class App extends Component {
   // Set initial state
@@ -110,12 +111,13 @@ class App extends Component {
       switch (this.state.currentView) {
         case "logout":
           return (
-            <Login
-              showView={this.showView}
-              setActiveUser={this.setActiveUser}
-              newEmail={this.newEmail} 
-              newPassword={this.newPassword}
-            />
+            <PopLog />
+            // <Login
+            //   showView={this.showView}
+            //   setActiveUser={this.setActiveUser}
+            //   newEmail={this.newEmail} 
+            //   newPassword={this.newPassword}
+            // />
           );
       }
     }
@@ -139,3 +141,4 @@ class App extends Component {
 
 
 export default App;
+

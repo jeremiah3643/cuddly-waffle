@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-
+import './navbar.css'
 
 export default class NavBar extends Component {
 
@@ -64,11 +64,7 @@ export default class NavBar extends Component {
                 </ul>
                 <article className="profileMenu">
                     <section className="profileMenu__item">
-                        <div><a title="notifications" id="nav__notifications" href="#">Notifications</a></div>
                         <div><a title="notifications" id="nav__profile" href="#">My Profile</a></div>
-                        <div><a title="notifications" id="nav__followers" href="#">My Followers</a></div>
-                        <div><a title="notifications" id="nav__friends" href="#">My Friends</a>
-                        </div>
                     </section>
                 </article>
             </nav>

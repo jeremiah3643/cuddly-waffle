@@ -8,7 +8,7 @@ class Register extends Component {
       lastname: "",
       location: "",
       password: "",
-      image: "",
+      username: "",
       email: ""
     };
 
@@ -17,7 +17,7 @@ class Register extends Component {
     this.locationChange = this.locationChange.bind(this);
     this.passwordChange = this.passwordChange.bind(this);
     this.emailChange = this.emailChange.bind(this);
-    this.imageChange = this.imageChange.bind(this);
+    this.usernameChange = this.usernameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -32,8 +32,8 @@ class Register extends Component {
     this.setState({ email: event.target.value });
   }
 
-  imageChange(event) {
-    this.setState({ image: event.target.value });
+  usernameChange(event) {
+    this.setState({ username: event.target.value });
   }
 
   locationChange(event) {
@@ -53,7 +53,7 @@ class Register extends Component {
     const submittedLastname = this.state.lastname;
     const submittedEmail = this.state.email;
     const submittedPassword = this.state.password;
-    const submittedImageUrl = this.state.image;
+    const submittedUsername = this.state.username;
     const submittedLocation = this.state.location;
 
     fetch(`http://localhost:8088/users?email=${submittedEmail}`)
@@ -81,7 +81,7 @@ class Register extends Component {
             last: submittedLastname,
             email: submittedEmail,
             password: submittedPassword,
-            image: submittedImageUrl,
+            username: submittedUsername,
             location: submittedLocation
             })
           });
@@ -91,7 +91,7 @@ class Register extends Component {
             lastname: '',
             email: '',
             password: '',
-            image: '',
+            username: '',
             location: ''
           });
           this.props.showView("login")
@@ -132,9 +132,9 @@ class Register extends Component {
             />
             <input className="form-control"
               type="text"
-              placeholder="Image URL"
-              value={this.state.image}
-              onChange={this.imageChange}
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.usernameChange}
             />
             <select value={this.state.location} onChange={this.locationChange} className="form-control">
               <option defaultValue="">Location:</option>
