@@ -37,8 +37,9 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
-                <a className="navbar-brand col-sm-3 col-md-2 mr-0" onClick={this.props.viewHandler} href="#">
+            <nav className="navbar" role="navigation">
+            <div className="navbar-brand">
+                <a className="navbar-item" href="https://bulma.io" onClick={this.props.viewHandler}>
                 </a>
                 <input id="searchTerms"
                     value={this.state.searchTerms}
@@ -67,6 +68,7 @@ export default class NavBar extends Component {
                         <div><a title="notifications" id="nav__profile" href="#">My Profile</a></div>
                     </section>
                 </article>
+                </div>
             </nav>
         )
     }
