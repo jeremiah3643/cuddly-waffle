@@ -16,7 +16,9 @@ export default class HomePage extends Component {
 
     loaded = function () {
         if (this.state.user !== null) {
-            return <h2 className="welcomeTag">{`Welcome ${this.state.user.username}`}</h2>
+            return <div>
+                <h2 className="welcomeTag">{`Welcome ${this.state.user.username}`}</h2>
+                </div>
         }
     }
 

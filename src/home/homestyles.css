@@ -1,3 +1,5 @@
-welcomeTag {
-    text-align: right;
+.welcomeTag{
+    margin-top: 10%;
+    font-size: 100px;
+    text-align: center;
 }
