@@ -37,37 +37,58 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <nav className="navbar" role="navigation">
-            <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io" onClick={this.props.viewHandler}>
-                </a>
-                <input id="searchTerms"
-                    value={this.state.searchTerms}
-                    onChange={this.handleFieldChange}
-                    onKeyPress={this.search}
-                    className="form-control w-100"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search" />
-                <ul className="navbar-nav px-3">
-                    <li className="nav-item text-nowrap">
-                        <a className="nav-link" 
-                        id="nav__profile"
-                        //     onClick={this.props.viewHandler} 
-                            href="#">
-                        </a>
-                    </li>
-                </ul>
-                <ul className="navbar-nav px-3">
-                    <li className="nav-item text-nowrap">
-                        <this.LoginLogout />
-                    </li>
-                </ul>
-                <article className="profileMenu">
-                    <section className="profileMenu__item">
-                        <div><a title="notifications" id="nav__profile" href="#">My Profile</a></div>
-                    </section>
-                </article>
+            <nav className="navbar is-fixed-top" role="navigation">
+                <div className="navbar-brand">
+                    <a className="navbar-item" href="https://bulma.io" onClick={this.props.viewHandler}>
+                    </a>
+                    {/* <input id="searchTerms"
+                        value={this.state.searchTerms}
+                        onChange={this.handleFieldChange}
+                        onKeyPress={this.search}
+                        className="form-control w-100"
+                        type="search"
+                        
+                        placeholder="Search"
+                        aria-label="Search" />
+                    <ul className="navbar-nav px-3">
+                        <li className="nav-item text-nowrap">
+                            <a className="nav-link"
+                                id="nav__profile"
+                                //     onClick={this.props.viewHandler} 
+                                href="#">
+                            </a>
+                        </li>
+                    </ul> */}
+                    <ul className="navbar-item">
+                        <li className="nav-item">
+                            <this.LoginLogout />
+                        </li>
+                    </ul>
+                    <div>
+                    <input id="searchTerms"
+                        value={this.state.searchTerms}
+                        onChange={this.handleFieldChange}
+                        onKeyPress={this.search}
+                        className="input is-normal"
+                        type="search"
+                        
+                        placeholder="Search"
+                        aria-label="Search" />
+                    <ul className="navbar-nav px-3">
+                        <li className="nav-item text-nowrap">
+                            <a className="nav-link"
+                                id="nav__profile"
+                                //     onClick={this.props.viewHandler} 
+                                href="#">
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+                    <article className="navbar-item">
+                        <section className="profileMenu__item">
+                            <div><a title="notifications" id="nav__profile" href="#">My Profile</a></div>
+                        </section>
+                    </article>
                 </div>
             </nav>
         )

@@ -10,13 +10,13 @@ import HomePage from './home/HomePage'
 
 class App extends Component {
   // Set initial state
-  state = {
-    currentView: "login",
-    searchTerms: "",
-    activeUser: sessionStorage.getItem("bandId"),
-    newEmail: "",
-    newPassword: ""
-  };
+  // state = {
+  //   currentView: "login",
+  //   searchTerms: "",
+  //   activeUser: sessionStorage.getItem("bandId"),
+  //   newEmail: "",
+  //   newPassword: ""
+  // };
 
   // Search handler -> passed to NavBar
   
@@ -94,10 +94,6 @@ class App extends Component {
 
   /*
         Function to determine which main view to render.
-
-        TODO:
-            2. Register view
-            3. Create event view
     */
   View = () => {
     if (this.state.currentView === "register") {

@@ -1,18 +1,6 @@
-.profileMenu {
-    display: none;
-    top: 58px;
-    right: 1px;
-    padding: 8px;
-    position: absolute;
-    width: 250px;
-    border: 1px #f5f5f5 solid;
-    font-size: 1em;
-    background-color: brown;
-    z-index: 5;
-    display: inline-block;
-}
 
 
+/* 
 .navbar .form-control {
     padding: .75rem 1rem;
     border-width: 0;
@@ -22,3 +10,16 @@
 .light-blue {
     background-color:slategray;
 }
+.navbar {
+    display: none;
+    top: 58px;
+    right: 1px;
+    padding: 8px;
+    position: top;
+    width: 250px;
+    border: 1px #f5f5f5 solid;
+    font-size: 1em;
+    background-color: #f2ffa5(165, 42, 42, 0.377);
+    z-index: 5;
+    display: inline-block;
+} */
