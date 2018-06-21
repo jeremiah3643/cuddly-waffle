@@ -106,10 +106,7 @@ class App extends Component {
       );
     } else {
       switch (this.state.currentView) {
-        case "logout":
-          return (
-            <PopLog />
-          )
+
             case "HomePage":
             return (
               <HomePage id={sessionStorage.getItem("bandId")}/>
