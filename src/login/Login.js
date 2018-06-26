@@ -75,7 +75,7 @@ export default class Login extends Component {
     */
   render() {
     return (
-      <div className="container is-fluid">
+      <div className="login-div field">
         <form className="container" onSubmit={this.handleLogin}>
           <h1 className="notification">Please sign in</h1>
           <label htmlFor="inputEmail" className="sr-only">
