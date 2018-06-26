@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import register from './register.css';
 
 function validate(email, password) {
   // true means invalid, so our conditions got reversed
@@ -55,12 +56,10 @@ class Register extends Component {
   }
 
   handleSubmit(event) {
-    if (!this.canBeSubmitted()) {
-      event.preventDefault();
-      return;
-    }
+     
+    
     const { email, password } = this.state;
-    alert(`Signed up with email: ${email} password: ${password}`);
+    alert("You Have Successfully , Please Log In");
   
     // Prevent form from clearing every time submitted
     event.preventDefault();
@@ -106,7 +105,7 @@ class Register extends Component {
 
             })
           });
-          this.props.setUsernamePassword(submittedEmail, submittedPassword)
+          this.props.setUsernamePassword(submittedUsername, submittedPassword)
           this.setState({
             firstname: '',
             lastname: '',
@@ -119,18 +118,14 @@ class Register extends Component {
         }
       });
   }
-  canBeSubmitted() {
-    const errors = validate(this.state.email, this.state.password);
-    const isDisabled = Object.keys(errors).some(x => errors[x]);
-    return !isDisabled;
-  }
+
+  
 
 
   render() {
-    const errors = validate(this.state.email, this.state.password);
-    const isDisabled = Object.keys(errors).some(x => errors[x]);
+
     return (
-      <div className="field">
+      <div className="field level" id="registerdiv">
         {/* <h1>Sign-up to use our app below!</h1> */}
         <form onSubmit={this.handleSubmit} className="control">
           <h1 className="h3 mb-3 font-weight-normal">Register to use Bandspace:</h1>
@@ -149,7 +144,7 @@ class Register extends Component {
           />
           <div className="field">
             <p className="control has-icons-left has-icons-right">
-              <input className={errors.email ? "error" : ""} className="input" type="email" placeholder="Email"
+              <input  className="input" type="email" placeholder="Email"
                 value={this.state.email}
                 onChange={this.emailChange} />
               <span className="icon is-small is-left">
@@ -177,7 +172,7 @@ class Register extends Component {
             onChange={this.usernameChange}
           />
 
-          <button disabled={!isDisabled} type="submit" text="Submit" className="button is-primary">
+          <button  type="submit" text="Submit" className="button is-primary">
             Submit</button>
         </form>
       </div>
