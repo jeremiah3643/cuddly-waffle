@@ -87,7 +87,7 @@ export default class Login extends Component {
             placeholder="User Name"
             type="username "
             id="username"
-            className="form-control"
+            className="form-control input is-normal"
             required=""
             autoFocus=""
           />
@@ -98,14 +98,12 @@ export default class Login extends Component {
             onChange={this.handleFieldChange}
             type="password"
             id="password"
-            className="form-control"
+            className="form-control input is-normal"
             defaultValue={this.props.newPassword}
             placeholder="Password"
             required=""
           />
-          <div className="checkbox mb-3">
-            <input type="checkbox" value="remember-me" /> Remember me
-          </div>
+          
           <button className="button is-primary is-outlined" type="submit">
             Sign in
           </button>
@@ -117,7 +115,7 @@ export default class Login extends Component {
           >
             Register
           </button>
-          <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
+          <p className="">© 2017-2018</p>
         </form>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import register from './register.css';
 
 function validate(email, password) {
   // true means invalid, so our conditions got reversed
@@ -130,7 +131,7 @@ class Register extends Component {
     const errors = validate(this.state.email, this.state.password);
     const isDisabled = Object.keys(errors).some(x => errors[x]);
     return (
-      <div className="field">
+      <div className="field level" id="registerdiv">
         {/* <h1>Sign-up to use our app below!</h1> */}
         <form onSubmit={this.handleSubmit} className="control">
           <h1 className="h3 mb-3 font-weight-normal">Register to use Bandspace:</h1>
