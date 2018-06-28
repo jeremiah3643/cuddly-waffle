@@ -23,3 +23,8 @@
     z-index: 5;
     display: inline-block;
 } */
+#navbar {
+    text-align: center;
+    display:flex;
+    float:none;
+}

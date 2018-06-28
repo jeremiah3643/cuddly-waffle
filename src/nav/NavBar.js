@@ -1,5 +1,9 @@
 import React, { Component } from "react"
-import './navbar.css'
+import './navbar.css';
+import HomePage from "../home/HomePage";
+import Forum from "../forum/Forum";
+import Login from "../login/Login";
+import App from "../App"
 
 export default class NavBar extends Component {
 
@@ -18,6 +22,23 @@ export default class NavBar extends Component {
             this.setState({ searchTerms: "" })
         }
     }
+    handleHome = () => {
+        if (this.activeUser === null) {
+            <Login showView={this.showView}/>
+        }
+        else {
+            <HomePage showView={this.showView}/>
+        }
+    }
+    handleForum = () => {
+        if (this.props.activeUser === null){
+            return <a></a>
+        }
+        else {
+            return <a className="nav-link navbar-item" onclick={this.props.viewHandler}  href="#">Forum</a>
+        }
+    }
+
 
     LoginLogout = () => {
         if (this.props.activeUser === null) {
@@ -65,28 +86,33 @@ export default class NavBar extends Component {
                         </li>
                     </ul>
                     <div>
-                    <input id="searchTerms"
-                        value={this.state.searchTerms}
-                        onChange={this.handleFieldChange}
-                        onKeyPress={this.search}
-                        className="input is-normal"
-                        type="search"
-                        
-                        placeholder="Search"
-                        aria-label="Search" />
-                    <ul className="navbar-nav px-3">
-                        <li className="nav-item text-nowrap">
-                            <a className="nav-link"
-                                id="nav__profile"
-                                //     onClick={this.props.viewHandler} 
-                                href="#">
-                            </a>
+                        <input id="searchTerms"
+                            value={this.state.searchTerms}
+                            onChange={this.handleFieldChange}
+                            onKeyPress={this.search}
+                            className="input is-normal"
+                            type="search"
+
+                            placeholder="Search"
+                            aria-label="Search" />
+                        <ul className="navbar-nav px-3">
+                            <li className="nav-item text-nowrap">
+                                <a className="nav-link"
+                                    id="nav__profile"
+                                    //     onClick={this.props.viewHandler} 
+                                    href="#">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul className="navbar-item">
+                        <li className="nav-item">
+                            <this.handleForum />
                         </li>
                     </ul>
-                    </div>
                     <article className="navbar-item">
                         <section className="profileMenu__item">
-                            <div><a title="notifications" id="nav__profile" href="#">My Profile</a></div>
+                            <div><a onClick={this.handleHome} title="notifications" id="nav__homepage" href="#">Home</a></div>
                         </section>
                     </article>
                 </div>
