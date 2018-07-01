@@ -20,7 +20,7 @@ export default class HomePage extends Component {
             return <div>
                 <h2 className="welcomeTag">{`Welcome ${this.state.user.username}`}</h2>
                 <a>
-                <Forum />
+                <Forum user={this.state.user.username}/>
                 </a>
                 </div>
         }

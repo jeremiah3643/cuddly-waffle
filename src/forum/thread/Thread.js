@@ -27,11 +27,11 @@ export default class Thread extends Component{
 		//get post from state and post to api
 		let post = {
 			threadId: this.props.thread,
-			userId: this.props.authedUser,
+			userId: this.state.activeUser,
 			content: this.state.newPost,
 			timestamp: new Date().getTime()
 		}
-		fetch(`${this.props.api}/posts`,{ 
+		fetch(`http://localhost:8088/posts`,{ 
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -39,7 +39,7 @@ export default class Thread extends Component{
 			method: 'POST'
 			}).then(r => r.json()).then(post => {
 				//update the thread key bump with new timestamp
-				fetch(`${this.props.api}/threads/${this.props.thread}`, {
+				fetch(`http://localhost:8088/threads/${this.props.thread}`, {
 					headers: {
 						'Content-Type': 'application/json'
 					},
@@ -53,7 +53,7 @@ export default class Thread extends Component{
 	}.bind(this)
 
 	newPost(){
-		if(this.props.authedUser === null){
+		if(this.props.activeUser === null){
 			return (<div className="notification thread__box post__box">
 					<textarea className="input" placeholder="Please log in to post to the forum" disabled/>
 					<input type="button" className="button is-info" value="Post" onClick={this.post} disabled/>
@@ -75,7 +75,7 @@ export default class Thread extends Component{
 	}.bind(this)
 
 	getPosts = function(){
-		fetch(`${this.props.api}/posts?_expand=user&threadId=${this.props.thread}`).then(r => r.json()).then(threads => {
+		fetch(`http://localhost:8088/posts?expand=user&threadId=${this.props.thread}`).then(r => r.json()).then(threads => {
 			let pagesArr = []
 			let page = []
 			for (let i = 0; i < threads.length; i += 1) {
@@ -92,7 +92,7 @@ export default class Thread extends Component{
 			}
 			this.setState({ pages: pagesArr })
 		})
-		fetch(`${this.props.api}/threads/${this.props.thread}`).then( r => r.json()).then(thread => {
+		fetch(`http://localhost:8088/threads/${this.props.thread}`).then( r => r.json()).then(thread => {
 			this.setState({title: thread.title})
 		})
 	}.bind(this)

@@ -26,7 +26,8 @@ class App extends Component {
         currentView: "login",
         searchTerms: "",
         activeUser: sessionStorage.getItem("bandId"),
-        viewingUser: ""
+        viewingUser: "",
+        user: ""
     }
 
     performSearch = function(terms) {
@@ -114,7 +115,7 @@ class App extends Component {
           );
           case "Forum":
           return (
-            <Forum id={sessionStorage.getItem("bandId")}  showView={this.showView} />
+            <Forum id={sessionStorage.getItem("bandId")}activeUser={this.activeUser} setActiveUser={this.setActiveUser} showView={this.showView} />
           )
       }
     }

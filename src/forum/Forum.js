@@ -34,14 +34,14 @@ export default class Forum extends Component {
         //create new thread
         let time = new Date().getTime()
         let thread = {
-            userId: this.props.authedUser,
+            userId: this.props.activeUser,
             title: this.state.title,
             initialPost: this.state.post,
             bump: time
         }
 
         //post to api
-		fetch(`http://127.0.0.1:8088/threads`,{ 
+		fetch(`http://localhost:8088/threads`,{ 
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -51,12 +51,12 @@ export default class Forum extends Component {
                 //create initial post for thread
                 let post = {
                     threadId: thread.id,
-                    userId: this.props.authedUser,
+                    userId: this.state.activeUser,
                     content: thread.initialPost,
                     timestamp: time
                 }
                 //post post to api
-                fetch(`http://127.0.0.1:8088/posts`,{ 
+                fetch(`http://localhost:8088/posts`,{ 
                 headers: {
                     'Content-Type': 'application/json'
                 },
