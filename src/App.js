@@ -114,7 +114,7 @@ class App extends Component {
           );
           case "Forum":
           return (
-            <Forum showView={this.showView} />
+            <Forum id={sessionStorage.getItem("bandId")}  showView={this.showView} />
           )
       }
     }

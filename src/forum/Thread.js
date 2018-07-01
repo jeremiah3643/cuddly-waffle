@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import App from "../App"
+import HomePage from "../home/HomePage"
 
 export default class Thread extends Component{
 
@@ -9,15 +11,15 @@ export default class Thread extends Component{
 				<div className="media-left has-text-centered usertile">
 					<div className="tile is-parent is-vertical">
                         <div className="tile is-child">
-							<h1 className="title is-5 is-unselectable">{this.props.thread.user.displayName}</h1>
+							{/* <h1 className="title is-5 is-unselectable">{this.state.user.username}</h1> */}
 						</div>
 						<div className="tile is-child">
 							<div className="level">
-								<div className="level-item">
+								{/* <div className="level-item">
 									<a className="image is-64x64">
 										<img id={`thread__profile__${this.props.thread.user.id}`} onClick={this.props.viewHandler} className="is-rounded" src={this.props.thread.user.img} alt="profile"/>
 									</a>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

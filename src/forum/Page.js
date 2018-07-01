@@ -1,6 +1,5 @@
-
 import React, { Component } from 'react';
-import Thread from "./thread.js"
+import Thread from "./Thread.js"
 
 export default class Page extends Component{
 

@@ -31,13 +31,12 @@ export default class NavBar extends Component {
         }
     }
     handleForum = () => {
-        if (this.props.activeUser === null){
-            return <a></a>
+            return(
+                <Forum  showView={this.showView("Forum")}/>
+            )
         }
-        else {
-            return <a className="nav-link navbar-item" onclick={this.props.viewHandler}  href="#">Forum</a>
-        }
-    }
+
+
 
 
     LoginLogout = () => {
@@ -58,7 +57,7 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <nav className="navbar is-fixed-top" role="navigation">
+            <nav className="navbar is-fixed-top is-black" role="navigation">
                 <div className="navbar-brand">
                     <a className="navbar-item" href="https://bulma.io" onClick={this.props.viewHandler}>
                     </a>
@@ -107,7 +106,7 @@ export default class NavBar extends Component {
                     </div>
                     <ul className="navbar-item">
                         <li className="nav-item">
-                            <this.handleForum />
+                            <a onClick={this.handleForum} href="#">Forum</a>
                         </li>
                     </ul>
                     <article className="navbar-item">
