@@ -59,7 +59,7 @@ class Register extends Component {
      
     
     const { email, password } = this.state;
-    alert("You Have Successfully , Please Log In");
+    alert("You Have Successfully Signed Up , Please Log In");
   
     // Prevent form from clearing every time submitted
     event.preventDefault();

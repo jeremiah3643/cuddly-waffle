@@ -6,7 +6,8 @@ import NavBar from './nav/NavBar';
 import Register from "./login/Register";
 import Login from './login/Login';
 import PopLog from './login/LoginPopup';
-import HomePage from './home/HomePage'
+import HomePage from './home/HomePage';
+import Forum from "./forum/Forum"
 
 class App extends Component {
   // Set initial state
@@ -111,6 +112,10 @@ class App extends Component {
             return (
               <HomePage id={sessionStorage.getItem("bandId")}/>
           );
+          case "Forum":
+          return (
+            <Forum id={sessionStorage.getItem("bandId")}  showView={this.showView} />
+          )
       }
     }
   };

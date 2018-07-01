@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import App from '../App';
 import Login from '../login/Login';
 import './homestyles.css'
+import Forum from "../forum/Forum"
 
 export default class HomePage extends Component {
     constructor(props) {
@@ -18,6 +19,9 @@ export default class HomePage extends Component {
         if (this.state.user !== null) {
             return <div>
                 <h2 className="welcomeTag">{`Welcome ${this.state.user.username}`}</h2>
+                <a>
+                <Forum />
+                </a>
                 </div>
         }
     }
