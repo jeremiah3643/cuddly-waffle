@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import PageNav from "../pagenav/Pagenav"
 import Page from "./Page"
-// import left from "../../img/left.png"
+import left from "../../img/left.png"
 
 export default class Thread extends Component{
 	state = {
@@ -27,7 +27,7 @@ export default class Thread extends Component{
 		//get post from state and post to api
 		let post = {
 			threadId: this.props.thread,
-			userId: this.state.activeUser,
+			userId: this.props.activeUser,
 			content: this.state.newPost,
 			timestamp: new Date().getTime()
 		}
@@ -75,7 +75,7 @@ export default class Thread extends Component{
 	}.bind(this)
 
 	getPosts = function(){
-		fetch(`http://localhost:8088/posts?expand=user&threadId=${this.props.thread}`).then(r => r.json()).then(threads => {
+		fetch(`http://localhost:8088/posts?_expand=user&threadId=${this.props.thread}`).then(r => r.json()).then(threads => {
 			let pagesArr = []
 			let page = []
 			for (let i = 0; i < threads.length; i += 1) {
@@ -104,7 +104,7 @@ export default class Thread extends Component{
 	render(){
 		return(
 				<div>
-					{/* <a className="title"><img id="thread__list" className="image is-32x32"src={left} onClick={this.props.back} alt="back"/></a> */}
+					<a className="title"><img id="thread__list" className="image is-32x32"src={left} onClick={this.props.back} alt="back"/></a>
 					<h1 className="title">{this.state.title}</h1>
 					<section id="post__pages">
 						{this.loaded()}

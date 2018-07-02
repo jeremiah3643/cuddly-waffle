@@ -111,11 +111,11 @@ class App extends Component {
 
             case "HomePage":
             return (
-              <HomePage id={sessionStorage.getItem("bandId")}/>
+              <HomePage setViewingUser={this.setViewingUser} activeUser={this.state.activeUser} id={sessionStorage.getItem("bandId")}/>
           );
           case "Forum":
           return (
-            <Forum id={sessionStorage.getItem("bandId")}activeUser={this.activeUser} setActiveUser={this.setActiveUser} showView={this.showView} />
+            <Forum id={sessionStorage.getItem("bandId")} activeUser={this.state.activeUser} showView={this.showView} />
           )
       }
     }

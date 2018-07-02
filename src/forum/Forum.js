@@ -5,6 +5,8 @@ import "./Forum.css"
 import Thread from "./thread/Thread"
 import App from "../App"
 
+// Thanks to Levi for the Forum!!
+
 export default class Forum extends Component {
 
     state = {
@@ -32,6 +34,7 @@ export default class Forum extends Component {
 
     create = function () {
         //create new thread
+        debugger
         let time = new Date().getTime()
         let thread = {
             userId: this.props.activeUser,
@@ -51,7 +54,7 @@ export default class Forum extends Component {
                 //create initial post for thread
                 let post = {
                     threadId: thread.id,
-                    userId: this.state.activeUser,
+                    userId: this.props.activeUser,
                     content: thread.initialPost,
                     timestamp: time
                 }
@@ -107,7 +110,7 @@ export default class Forum extends Component {
 
         showView = function(){
             if(this.state.view === "thread"){
-                return <Thread  back={this.currentView} thread={this.state.thread} viewHandler={this.props.viewHandler}/>
+                return <Thread activeUser={this.props.activeUser} back={this.changeView} thread={this.state.thread} viewHandler={this.props.viewHandler}/>
                 //create thread view here (include back button to return to pagelist)
             }else{
                 return <div>
@@ -135,7 +138,7 @@ export default class Forum extends Component {
         }.bind(this)
     
         getThreads = function(){
-            fetch(`http://127.0.0.1:8088/threads?expand=user&sort=bump&order=desc`).then(r => r.json()).then(threads => {
+            fetch(`http://127.0.0.1:8088/threads?_expand=user&sort=bump&order=desc`).then(r => r.json()).then(threads => {
                 let pagesArr = []
                 let page = []
                 for (let i = 0; i < threads.length; i += 1) {
@@ -161,6 +164,7 @@ export default class Forum extends Component {
         render() {
             return (
                 <section id="forum" className="container ">
+                {/* Thanks to Levi for the Forum! */}
                 {this.showView()}
                 </section>
             )

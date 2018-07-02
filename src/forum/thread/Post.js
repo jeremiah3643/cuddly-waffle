@@ -8,7 +8,7 @@ export default class Post extends Component{
 				<div className="media-left has-text-centered usertile">
 					<div className="tile is-parent is-vertical">
                         <div className="tile is-child">
-							{/* <h1 className="title is-5 is-unselectable">${this.props.post.user.userId}</h1> */}
+							<h1 className="title is-5 is-unselectable">{this.props.post.user.username}</h1>
 						</div>
 						<div className="tile is-child">
 							<div className="level">
