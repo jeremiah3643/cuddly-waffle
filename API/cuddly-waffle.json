@@ -6,7 +6,16 @@
       "email": "jeremiah@fake.com",
       "password": "091690a",
       "username": "Bassman",
-      "id": 1
+      "id": 1,
+      "img": "../img/IMG_5660-17.jpg"
+    },
+    {
+      "first": "Lucas",
+      "last": "Pritchard",
+      "email": "lucas@fake.com",
+      "password": "password",
+      "username": "Axeman",
+      "id": 2
     }
   ],
   "threads": [
@@ -16,6 +25,13 @@
       "initialPost": "This is a test!",
       "bump": 1530582653251,
       "id": 1
+    },
+    {
+      "userId": 2,
+      "title": "Testing again",
+      "initialPost": "Test!",
+      "bump": 1530590017708,
+      "id": 2
     }
   ],
   "posts": [
@@ -32,6 +48,20 @@
       "content": "Testing yet again!",
       "timestamp": 1530582653251,
       "id": 2
+    },
+    {
+      "threadId": 2,
+      "userId": 2,
+      "content": "Test!",
+      "timestamp": 1530589999585,
+      "id": 3
+    },
+    {
+      "threadId": "2",
+      "userId": 1,
+      "content": "Hello!",
+      "timestamp": 1530590017708,
+      "id": 4
     }
   ]
 }

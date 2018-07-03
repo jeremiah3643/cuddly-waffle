@@ -27,7 +27,7 @@ export default class NavBar extends Component {
             <Login showView={this.showView}/>
         }
         else {
-            <HomePage showView={this.showView}/>
+            this.props.viewHandler("HomePage")
         }
     }
     handleForum = () => {
@@ -57,10 +57,12 @@ export default class NavBar extends Component {
 
     render() {
         return (
+            
             <nav className="navbar is-fixed-top is-black" role="navigation">
+            
                 <div className="navbar-brand">
                     <a className="navbar-item" href="https://bulma.io" onClick={this.props.viewHandler}>
-                    </a>
+                    </a><div className="navbar-item is-size-3" ><p>Cuddly Waffle Bandspace</p></div>
                     {/* <input id="searchTerms"
                         value={this.state.searchTerms}
                         onChange={this.handleFieldChange}
@@ -84,7 +86,7 @@ export default class NavBar extends Component {
                             <this.LoginLogout />
                         </li>
                     </ul>
-                    <div>
+                    {/* <div>
                         <input id="searchTerms"
                             value={this.state.searchTerms}
                             onChange={this.handleFieldChange}
@@ -103,12 +105,12 @@ export default class NavBar extends Component {
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                    <ul className="navbar-item">
+                    </div> */}
+                    {/* <ul className="navbar-item">
                         <li className="nav-item">
                             <a onClick={this.handleForum} href="#">Forum</a>
                         </li>
-                    </ul>
+                    </ul> */}
                     <article className="navbar-item">
                         <section className="profileMenu__item">
                             <div><a onClick={this.handleHome} title="notifications" id="nav__homepage" href="#">Home</a></div>
