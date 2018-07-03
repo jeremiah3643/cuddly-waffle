@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "first": "Jeremiah",
+      "last": "Pritchard",
+      "email": "jeremiah@fake.com",
+      "password": "091690a",
+      "username": "Bassman",
+      "id": 1
+    }
+  ],
+  "threads": [
+    {
+      "userId": 1,
+      "title": "Testing",
+      "initialPost": "This is a test!",
+      "bump": 1530582653251,
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "threadId": 1,
+      "userId": 1,
+      "content": "This is a test!",
+      "timestamp": 1530582641574,
+      "id": 1
+    },
+    {
+      "threadId": "1",
+      "userId": 1,
+      "content": "Testing yet again!",
+      "timestamp": 1530582653251,
+      "id": 2
+    }
+  ]
+}

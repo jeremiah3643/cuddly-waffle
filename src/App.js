@@ -5,7 +5,7 @@ import "./App.css";
 import NavBar from './nav/NavBar';
 import Register from "./login/Register";
 import Login from './login/Login';
-import PopLog from './login/LoginPopup';
+
 import HomePage from './home/HomePage';
 import Forum from "./forum/Forum"
 
